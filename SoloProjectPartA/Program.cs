@@ -17,6 +17,8 @@ namespace SoloProjectPartA
             Console.WriteLine("Blood for the blood god!");
 
             Console.WriteLine("Emperor Protect!");
+
+            Console.WriteLine("Emperor Prevail!");
         }
     }
 }
