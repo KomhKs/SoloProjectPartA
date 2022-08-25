@@ -18,6 +18,8 @@ namespace SoloProjectPartA
 
             Console.WriteLine("Emperor Protect!");
 
+            Console.WriteLine("And They Shall Know No Fear!!!");
+
             Console.WriteLine("Emperor Prevail!");
         }
     }
