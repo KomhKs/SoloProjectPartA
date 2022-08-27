@@ -16,28 +16,28 @@ namespace SoloProjectPartA.Database
         public MyDatabase()
         {
             #region Seeding Students
-            Student s1 = new Student(1, "Student First Name 1", "Student Last Name 1", new DateTime(1984, 05, 16), 2500);
-            Student s2 = new Student(2, "Student First Name 2", "Student Last Name 2", new DateTime(1954, 06, 17), 2250);
-            Student s3 = new Student(3, "Student First Name 3", "Student Last Name 3", new DateTime(1994, 07, 18), 2250);
-            Student s4 = new Student(4, "Student First Name 4", "Student Last Name 4", new DateTime(1992, 08, 19), 2500);
-            Student s5 = new Student(5, "Student First Name 5", "Student Last Name 5", new DateTime(1997, 08, 20), 2250);
-            Student s6 = new Student(6, "Student First Name 6", "Student Last Name 6", new DateTime(1987, 09, 21), 2500);
-            Student s7 = new Student(7, "Student First Name 7", "Student Last Name 7", new DateTime(1986, 10, 22), 2250);
-            Student s8 = new Student(8, "Student First Name 8", "Student Last Name 8", new DateTime(2001, 11, 23), 2500);
-            Student s9 = new Student(9, "Student First Name 9", "Student Last Name 9", new DateTime(2000, 12, 24), 2500);
-            Student s10 = new Student(10, "Student First Name 10", "Student Last Name 10", new DateTime(1984, 01, 25), 2500);
-            Student s11 = new Student(11, "Student First Name 11", "Student Last Name 11", new DateTime(1985, 02, 26), 2250);
-            Student s12 = new Student(12, "Student First Name 12", "Student Last Name 12", new DateTime(1987, 01, 16), 2500);
-            Student s13 = new Student(13, "Student First Name 13", "Student Last Name 13", new DateTime(1986, 03, 27), 2250);
+            Student s1 = new Student(1, "Kostas", "Mpaladimas", new DateTime(1984, 05, 16), 2500);
+            Student s2 = new Student(2, "Giorgos", "Dimoylas", new DateTime(1954, 06, 17), 2250);
+            Student s3 = new Student(3, "Alexandros", "Poylopoylos", new DateTime(1994, 07, 18), 2250);
+            Student s4 = new Student(4, "Sotiris", "Xabales", new DateTime(1992, 08, 19), 2500);
+            Student s5 = new Student(5, "Nikos", "Kollaros", new DateTime(1997, 08, 20), 2250);
+            Student s6 = new Student(6, "Stayros", "Sionis", new DateTime(1987, 09, 21), 2500);
+            Student s7 = new Student(7, "Stathis", "Karachalios", new DateTime(1986, 10, 22), 2250);
+            Student s8 = new Student(8, "Tasos", "Student Last Name 8", new DateTime(2001, 11, 23), 2500);
+            Student s9 = new Student(9, "Giannis", "Galanakis", new DateTime(2000, 12, 24), 2500);
+            Student s10 = new Student(10, "Aris", "Karagiannis", new DateTime(1984, 01, 25), 2500);
+            Student s11 = new Student(11, "Alkis", "Pagoulatos", new DateTime(1985, 02, 26), 2250);
+            Student s12 = new Student(12, "Theodoros", "Sioylas", new DateTime(1987, 01, 16), 2500);
+            Student s13 = new Student(13, "Nikolaos", "Polemarchakis", new DateTime(1986, 03, 27), 2250);
             #endregion
             #region Seeding Trainers
-            Trainer t1 = new Trainer(1, "Trainer First Name 1", "Trainer Last Name 1", "Subject 1");
-            Trainer t2 = new Trainer(2, "Trainer First Name 2", "Trainer Last Name 2", "Subject 2");
-            Trainer t3 = new Trainer(3, "Trainer First Name 3", "Trainer Last Name 3", "Subject 3");
-            Trainer t4 = new Trainer(4, "Trainer First Name 4", "Trainer Last Name 4", "Subject 4");
-            Trainer t5 = new Trainer(5, "Trainer First Name 5", "Trainer Last Name 5", "Subject 5");
-            Trainer t6 = new Trainer(6, "Trainer First Name 6", "Trainer Last Name 6", "Subject 6");
-            Trainer t7 = new Trainer(7, "Trainer First Name 7", "Trainer Last Name 7", "Subject 7");
+            Trainer t1 = new Trainer(1, "Ektoras", "Gatsos", "C#");
+            Trainer t2 = new Trainer(2, "Nikolaos", "Polizos", "Power Electronics");
+            Trainer t3 = new Trainer(3, "Georgios", "Drakakis", "Theory of electrical circuits");
+            Trainer t4 = new Trainer(4, "Ioannis", "Siderakis", "High Voltages");
+            Trainer t5 = new Trainer(5, "Aristedes", "Kyprakis", "Biomechanical Automations");
+            Trainer t6 = new Trainer(6, "Mixalis", "Sfakiotakis", "Systems of Automated Control");
+            Trainer t7 = new Trainer(7, "Dimitrios", "Minadakis", "Microcontrolers");
             #endregion
             #region Seeding Assignments
             Assignment a1 = new Assignment(1, "Assignment 1", "Description 1", new DateTime(2022, 03, 31), 50, 100);
