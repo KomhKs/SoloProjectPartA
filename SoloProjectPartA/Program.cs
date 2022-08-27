@@ -1,4 +1,8 @@
-﻿using System;
+﻿using SoloProjectPartA.Application;
+using SoloProjectPartA.Database;
+using SoloProjectPartA.Enum;
+using SoloProjectPartA.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +14,20 @@ namespace SoloProjectPartA
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("You did it! You crazy son of a bitch you did it!");
-            Console.WriteLine("You did it again!");            
-            Console.WriteLine("I also did it!");
-            
-            Console.WriteLine("Blood for the blood god!");
+            MyDatabase db = new MyDatabase();
+            int input;
+            SelectMenu selection;
+            do
+            {
+                View.ViewMenu();
 
-            Console.WriteLine("Emperor Protect!");
+                input = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("And They Shall Know No Fear!!!");
+                Console.Clear();
+                selection = (SelectMenu)input;
 
-            Console.WriteLine("Emperor Prevail!");
+                Controller.Controller1(db, selection);
+            } while (selection != 0);
         }
     }
 }
