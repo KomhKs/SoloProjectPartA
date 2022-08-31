@@ -14,8 +14,10 @@ namespace SoloProjectPartA.Entities
         public DateTime DateOfBirth { get; set; }
         public decimal TuitionFees { get; set; }
         // Navigation Properties
+        //public int CourseId { get; set; }
         public ICollection<Course> Courses { get; set; }
-        public ICollection<Assignment> Assignment { get; set; }
+        //public int AssignmentId { get; set; }
+        public ICollection<Assignment> Assignments { get; set; }
 
         public Student()
         {
