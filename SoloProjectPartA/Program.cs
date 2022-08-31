@@ -28,6 +28,7 @@ namespace SoloProjectPartA
 
                 Controller.Controller1(db, selection);
             } while (selection != 0);
+            Console.WriteLine("Tralala");
         }
     }
 }
