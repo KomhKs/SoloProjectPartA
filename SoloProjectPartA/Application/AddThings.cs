@@ -23,28 +23,28 @@ namespace SoloProjectPartA.Application
         }
         public static void AddTrainer(MyApplicationDbContext db)
         {
-            Input.ReadTrainer(out int id, out string name, out string surname, out string subject);
-            Trainer tr1 = new Trainer(id, name, surname, subject);
+            Input.ReadTrainer(out string name, out string surname, out string subject);
+            Trainer tr1 = new Trainer(name, surname, subject);
             db.Trainers.AddOrUpdate(tr1);
             db.SaveChanges();
         }
         public static void AddCourse(MyApplicationDbContext db)
         {
-            Input.ReadCourse(out int id, out string title, out string type, out string stream, out string startDate, out string endDate);
+            Input.ReadCourse(out string title, out string type, out string stream, out string startDate, out string endDate);
             DateTime result1;
             DateTime.TryParse(startDate, out result1);
             DateTime result2;
             DateTime.TryParse(endDate, out result2);
-            Course cou1 = new Course(id, title, stream, type, result1, result2);
+            Course cou1 = new Course(title, stream, type, result1, result2);
             db.Courses.AddOrUpdate(cou1);
             db.SaveChanges();
         }
         public static void AddAssignment(MyApplicationDbContext db)
         {
-            Input.ReadAssignment(out int id, out string title, out string description, out string subDate, out float oralMark, out float totalMark);
+            Input.ReadAssignment(out string title, out string description, out string subDate, out float oralMark, out float totalMark);
             DateTime result;
             DateTime.TryParse(subDate, out result);
-            Assignment ass1 = new Assignment(id, title, description, result, oralMark, totalMark);
+            Assignment ass1 = new Assignment(title, description, result, oralMark, totalMark);
             db.Assignments.AddOrUpdate(ass1);
             db.SaveChanges();
         }
@@ -69,8 +69,8 @@ namespace SoloProjectPartA.Application
             string exit;
             do
             {
-                Input.ReadTrainer(out int id, out string name, out string surname, out string subject);
-                Trainer tr1 = new Trainer(id, name, surname, subject);
+                Input.ReadTrainer(out string name, out string surname, out string subject);
+                Trainer tr1 = new Trainer(name, surname, subject);
                 db.Trainers.AddOrUpdate(tr1);
                 db.SaveChanges();
                 Console.WriteLine("Exit Y/N");
@@ -82,12 +82,12 @@ namespace SoloProjectPartA.Application
             string exit;
             do
             {
-                Input.ReadCourse(out int id, out string title, out string type, out string stream, out string startDate, out string endDate);
+                Input.ReadCourse(out string title, out string type, out string stream, out string startDate, out string endDate);
                 DateTime result1;
                 DateTime.TryParse(startDate, out result1);
                 DateTime result2;
                 DateTime.TryParse(endDate, out result2);
-                Course cou1 = new Course(id, title, stream, type, result1, result2);
+                Course cou1 = new Course(title, stream, type, result1, result2);
                 db.Courses.AddOrUpdate(cou1);
                 db.SaveChanges();
                 Console.WriteLine("Exit Y/N");
@@ -99,10 +99,10 @@ namespace SoloProjectPartA.Application
             string exit;
             do
             {
-                Input.ReadAssignment(out int id, out string title, out string description, out string subDate, out float oralMark, out float totalMark);
+                Input.ReadAssignment(out string title, out string description, out string subDate, out float oralMark, out float totalMark);
                 DateTime result;
                 DateTime.TryParse(subDate, out result);
-                Assignment ass1 = new Assignment(id, title, description, result, oralMark, totalMark);
+                Assignment ass1 = new Assignment(title, description, result, oralMark, totalMark);
                 db.Assignments.AddOrUpdate(ass1);
                 db.SaveChanges();
                 Console.WriteLine("Exit Y/N");

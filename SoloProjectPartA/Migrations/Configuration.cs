@@ -34,23 +34,23 @@
             context.SaveChanges();
             #endregion
             #region Seeding Trainers
-            Trainer t1 = new Trainer(1, "Ektoras", "Gatsos", "C#");
-            Trainer t2 = new Trainer(2, "Nikolaos", "Polizos", "Power Electronics");
-            Trainer t3 = new Trainer(3, "Georgios", "Drakakis", "Theory of electrical circuits");
-            Trainer t4 = new Trainer(4, "Ioannis", "Siderakis", "High Voltages");
-            Trainer t5 = new Trainer(5, "Aristedes", "Kyprakis", "Biomechanical Automations");
-            Trainer t6 = new Trainer(6, "Mixalis", "Sfakiotakis", "Systems of Automated Control");
-            Trainer t7 = new Trainer(7, "Dimitrios", "Minadakis", "Microcontrolers");
+            Trainer t1 = new Trainer("Ektoras", "Gatsos", "C#");
+            Trainer t2 = new Trainer("Nikolaos", "Polizos", "Power Electronics");
+            Trainer t3 = new Trainer("Georgios", "Drakakis", "Theory of electrical circuits");
+            Trainer t4 = new Trainer("Ioannis", "Siderakis", "High Voltages");
+            Trainer t5 = new Trainer("Aristedes", "Kyprakis", "Biomechanical Automations");
+            Trainer t6 = new Trainer("Mixalis", "Sfakiotakis", "Systems of Automated Control");
+            Trainer t7 = new Trainer("Dimitrios", "Minadakis", "Microcontrolers");
             #endregion
             #region Seeding Assignments
-            Assignment a1 = new Assignment(1, "Assignment 1", "Description 1", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a1 = new Assignment("Assignment 1", "Description 1", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a1.Students = new List<Student> { s1, s3, s5 };
             s1.Assignment.Add(a1);
             s3.Assignment.Add(a1);
             s5.Assignment.Add(a1);
 
-            Assignment a2 = new Assignment(2, "Assignment 2", "Description 2", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a2 = new Assignment("Assignment 2", "Description 2", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to 
             a2.Students = new List<Student> { s2, s4, s6, s7 };
             s2.Assignment.Add(a2);
@@ -58,7 +58,7 @@
             s6.Assignment.Add(a2);
             s7.Assignment.Add(a2);
 
-            Assignment a3 = new Assignment(3, "Assignment 3", "Description 3", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a3 = new Assignment("Assignment 3", "Description 3", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a3.Students = new List<Student> { s2, s3, s5, s7, s8, s10 };
             s2.Assignment.Add(a3);
@@ -68,13 +68,13 @@
             s8.Assignment.Add(a3);
             s10.Assignment.Add(a3);
 
-            Assignment a4 = new Assignment(4, "Assignment 4", "Description 4", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a4 = new Assignment("Assignment 4", "Description 4", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a4.Students = new List<Student> { s1, s11 };
             s1.Assignment.Add(a1);
             s11.Assignment.Add(a4);
 
-            Assignment a5 = new Assignment(5, "Assignment 5", "Description 5", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a5 = new Assignment("Assignment 5", "Description 5", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a5.Students = new List<Student> { s3, s6, s9, s11 };
             s3.Assignment.Add(a5);
@@ -82,7 +82,7 @@
             s9.Assignment.Add(a5);
             s11.Assignment.Add(a5);
 
-            Assignment a6 = new Assignment(6, "Assignment 6", "Description 6", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a6 = new Assignment("Assignment 6", "Description 6", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a6.Students = new List<Student> { s1, s2, s3, s4, s5 };
             s1.Assignment.Add(a6);
@@ -91,7 +91,7 @@
             s4.Assignment.Add(a6);
             s5.Assignment.Add(a6);
 
-            Assignment a7 = new Assignment(7, "Assignment 7", "Description 7", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a7 = new Assignment("Assignment 7", "Description 7", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a7.Students = new List<Student> { s6, s7, s8, s9 };
             s6.Assignment.Add(a7);
@@ -99,13 +99,13 @@
             s8.Assignment.Add(a7);
             s9.Assignment.Add(a7);
 
-            Assignment a8 = new Assignment(8, "Assignment 8", "Description 8", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a8 = new Assignment("Assignment 8", "Description 8", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a8.Students = new List<Student> { s10, s11 };
             s10.Assignment.Add(a8);
             s11.Assignment.Add(a8);
 
-            Assignment a9 = new Assignment(9, "Assignment 9", "Description 9", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a9 = new Assignment("Assignment 9", "Description 9", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a9.Students = new List<Student> { s5, s7, s9, s11 };
             s5.Assignment.Add(a9);
@@ -113,7 +113,7 @@
             s9.Assignment.Add(a9);
             s11.Assignment.Add(a9);
 
-            Assignment a10 = new Assignment(10, "Assignment 10", "Description 10", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a10 = new Assignment("Assignment 10", "Description 10", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a10.Students = new List<Student> { s1, s6, s9, s10, s11 };
             s1.Assignment.Add(a10);
@@ -122,7 +122,7 @@
             s10.Assignment.Add(a10);
             s11.Assignment.Add(a10);
 
-            Assignment a11 = new Assignment(11, "Assignment 11", "Description 11", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a11 = new Assignment("Assignment 11", "Description 11", new DateTime(2022, 03, 31), 50, 100);
             // Adding Students to Assignments
             a11.Students = new List<Student> { s3, s4, s6, s7, s10 };
             s3.Assignment.Add(a11);
@@ -132,7 +132,7 @@
             s10.Assignment.Add(a11);
             #endregion
             #region Seeding Courses
-            Course c1 = new Course(1, "Course 1", "What the f is Stream? 1", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
+            Course c1 = new Course("Course 1", "What the f is Stream? 1", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
             // Adding Students to Courses
             c1.Students = new List<Student>() { s1, s3, s12 };
             s1.Courses.Add(c1);
@@ -153,7 +153,7 @@
             t4.Courses.Add(c1);
             t6.Courses.Add(c1);
 
-            Course c2 = new Course(2, "Course 2", "What the f is Stream? 2", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
+            Course c2 = new Course("Course 2", "What the f is Stream? 2", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
             // Adding Students to Courses
             c2.Students = new List<Student>() { s2, s4, s5 };
             s2.Courses.Add(c2);
@@ -172,7 +172,7 @@
             t5.Courses.Add(c2);
             t7.Courses.Add(c2);
 
-            Course c3 = new Course(3, "Course 3", "What the f is Stream? 3", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
+            Course c3 = new Course("Course 3", "What the f is Stream? 3", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
             // Adding Students to Courses
             c3.Students = new List<Student>() { s1, s2, s6, s7, s8 };
             s1.Courses.Add(c3);
@@ -192,7 +192,7 @@
             t1.Courses.Add(c3);
             t3.Courses.Add(c3);
 
-            Course c4 = new Course(4, "Course 4", "What the f is Stream? 4", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
+            Course c4 = new Course("Course 4", "What the f is Stream? 4", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
             // Adding Students to Courses
             c4.Students = new List<Student>() { s9, s10, s11 };
             s9.Courses.Add(c4);
@@ -213,7 +213,7 @@
             t4.Courses.Add(c4);
             t5.Courses.Add(c4);
 
-            Course c5 = new Course(5, "Course 5", "What the f is Stream? 5", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
+            Course c5 = new Course("Course 5", "What the f is Stream? 5", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
             // Adding Students to Courses
             c5.Students = new List<Student>() { s2, s3, s5, s7, s11, s13 };
             s2.Courses.Add(c5);

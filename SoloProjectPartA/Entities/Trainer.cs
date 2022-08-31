@@ -13,15 +13,14 @@ namespace SoloProjectPartA.Entities
         public string LastName { get; set; }
         public string Subject { get; set; }
         // Navigation Properties
-        public List<Course> Courses { get; set; } = new List<Course>();
+        public ICollection<Course> Courses { get; set; }
 
         public Trainer()
         {
 
         }
-        public Trainer(int trainerId, string firstName, string lastName, string subject)
+        public Trainer(string firstName, string lastName, string subject)
         {
-            TrainerId = trainerId;
             FirstName = firstName;
             LastName = lastName;
             Subject = subject;

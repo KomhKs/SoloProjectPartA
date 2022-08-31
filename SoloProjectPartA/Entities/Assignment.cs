@@ -15,15 +15,14 @@ namespace SoloProjectPartA.Entities
         public float OralMark { get; set; }
         public float TotalMark { get; set; }
         // Navigation Properties
-        public List<Course> Courses { get; set; } = new List<Course>();
-        public List<Student> Students { get; set; } = new List<Student>();
+        public ICollection<Course> Courses { get; set; }
+        public ICollection<Student> Students { get; set; }
         public Assignment()
         {
 
         }
-        public Assignment(int assignmentId, string title, string description, DateTime subDateTime, float oralMark, float totalMark)
+        public Assignment(string title, string description, DateTime subDateTime, float oralMark, float totalMark)
         {
-            AssignmentId = assignmentId;
             Title = title;
             Description = description;
             SubDate = subDateTime;

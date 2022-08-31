@@ -19,10 +19,8 @@ namespace SoloProjectPartA.Application
             Console.WriteLine("Give Student Date of Birth (yyyy/mm/dd)");
             dateOfBirth = Console.ReadLine();
         }
-        public static void ReadTrainer(out int id, out string name, out string surname, out string subject)
+        public static void ReadTrainer(out string name, out string surname, out string subject)
         {
-            Console.WriteLine("Give Trainer ID");
-            id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Give Trainer Name");
             name = Console.ReadLine();
             Console.WriteLine("Give Trainer Surname");
@@ -30,10 +28,8 @@ namespace SoloProjectPartA.Application
             Console.WriteLine("Give Trainer Subject");
             subject = Console.ReadLine();
         }
-        public static void ReadCourse(out int id, out string title, out string type, out string stream, out string startDate, out string endDate)
+        public static void ReadCourse(out string title, out string type, out string stream, out string startDate, out string endDate)
         {
-            Console.WriteLine("Give Course ID");
-            id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Give Course Title");
             title = Console.ReadLine();
             Console.WriteLine("Give Course Type");
@@ -45,10 +41,8 @@ namespace SoloProjectPartA.Application
             Console.WriteLine("Give Course End Date (yyyy/mm/dd)");
             endDate = Console.ReadLine();
         }
-        public static void ReadAssignment(out int id, out string title, out string description, out string subDate, out float oralMark, out float totalMark)
+        public static void ReadAssignment(out string title, out string description, out string subDate, out float oralMark, out float totalMark)
         {
-            Console.WriteLine("Give Assignment ID");
-            id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Give Assignment Title");
             title = Console.ReadLine();
             Console.WriteLine("Give Assignment Description");
