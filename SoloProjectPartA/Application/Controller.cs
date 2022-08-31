@@ -1,5 +1,5 @@
 ﻿using SoloProjectPartA.Database;
-using SoloProjectPartA.Enum;
+using SoloProjectPartA.Enums;
 using SoloProjectPartA.Views;
 using System;
 using System.Collections.Generic;
