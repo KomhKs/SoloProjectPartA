@@ -1,6 +1,7 @@
 ﻿using SoloProjectPartA.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,7 +42,7 @@ namespace SoloProjectPartA.Application
         {
             Console.WriteLine($"{ass.AssignmentId,-15}{ass.Title,-25}");
         }
-        public static void AllStudentsWithMultipleCourses(List<Student> students, string message)
+        public static void AllStudentsWithMultipleCourses(DbSet<Student> students, string message)
         {
             int c = 0;
             Console.WriteLine(message);
@@ -58,7 +59,7 @@ namespace SoloProjectPartA.Application
             }
             if (c == 0)
             {
-                Console.WriteLine("No Students With Multiple Coursses In Database.");
+                Console.WriteLine("No Students With Multiple Courses In Database.");
             }
         }
     }

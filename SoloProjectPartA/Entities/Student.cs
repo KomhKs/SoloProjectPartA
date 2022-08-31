@@ -22,9 +22,8 @@ namespace SoloProjectPartA.Entities
 
         }
 
-        public Student(int studentId, string firstName, string lastName, DateTime dateOfBirth, decimal tuitionFees)
+        public Student(string firstName, string lastName, DateTime dateOfBirth, decimal tuitionFees)
         {
-            StudentId = studentId;
             FirstName = firstName;
             LastName = lastName;
             DateOfBirth = dateOfBirth;

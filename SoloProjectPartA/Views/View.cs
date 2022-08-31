@@ -2,6 +2,7 @@
 using SoloProjectPartA.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace SoloProjectPartA.Views
 {
     public class View
     {
-        public static void ShowAllStudents(List<Student> students, string message)
+        public static void ShowAllStudents(DbSet<Student> students, string message)
         {
             Console.WriteLine(message);
             Console.WriteLine($"{"Student Id",-15}{"FirstName",-25}{"LastName",-25}{"DateOfBirth",-25}{"TuitionFees"}");
@@ -19,7 +20,7 @@ namespace SoloProjectPartA.Views
                 Print.PrintAllStudents(stu);
             }
         }
-        public static void ShowAllTrainers(List<Trainer> trainers, string message)
+        public static void ShowAllTrainers(DbSet<Trainer> trainers, string message)
         {
             Console.WriteLine(message);
             Console.WriteLine($"{"Trainer Id",-15}{"FirstName",-25}{"LastName",-25}{"Subject",-25}");
@@ -28,7 +29,7 @@ namespace SoloProjectPartA.Views
                 Print.PrintAllTrainers(tr);
             }
         }
-        public static void ShowAllCourses(List<Course> courses, string message)
+        public static void ShowAllCourses(DbSet<Course> courses, string message)
         {
             Console.WriteLine(message);
             Console.WriteLine($"{"Course Id",-15}{"Title",-25}{"Stream",-30}{"Type",-25}{"StartDate",-15}{"EndDate"}");
@@ -37,7 +38,7 @@ namespace SoloProjectPartA.Views
                 Print.PrintAllCourses(cou);
             }
         }
-        public static void ShowAllAssignments(List<Assignment> assignments, string message)
+        public static void ShowAllAssignments(DbSet<Assignment> assignments, string message)
         {
             Console.WriteLine(message);
             Console.WriteLine($"{"Assignment Id",-15}{"Title",-25}{"Description",-25}{"SubDateTime",-25}{"OralMark",-25}{"TotalMark",-25}");
@@ -46,7 +47,7 @@ namespace SoloProjectPartA.Views
                 Print.PrintAllAssignments(ass);
             }
         }
-        public static void StudentsPerCourse(List<Student> students, string message)
+        public static void StudentsPerCourse(DbSet<Student> students, string message)
         {
             {
                 Console.WriteLine(message);
@@ -63,7 +64,7 @@ namespace SoloProjectPartA.Views
                 }
             }
         }
-        public static void TrainersPerCourse(List<Trainer> trainers, string message)
+        public static void TrainersPerCourse(DbSet<Trainer> trainers, string message)
         {
             {
                 Console.WriteLine(message);
@@ -80,7 +81,7 @@ namespace SoloProjectPartA.Views
                 }
             }
         }
-        public static void AssignmentsPerStudent(List<Assignment> assignments, string message)
+        public static void AssignmentsPerStudent(DbSet<Assignment> assignments, string message)
         {
             {
                 Console.WriteLine(message);
@@ -97,7 +98,7 @@ namespace SoloProjectPartA.Views
                 }
             }
         }
-        public static void AssignmentsPerCourse(List<Assignment> assignments, string message)
+        public static void AssignmentsPerCourse(DbSet<Assignment> assignments, string message)
         {
             {
                 Console.WriteLine(message);

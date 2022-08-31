@@ -17,19 +17,21 @@
         protected override void Seed(SoloProjectPartA.Database.MyApplicationDbContext context)
         {
             #region Seeding Students
-            Student s1 = new Student(1, "Kostas", "Mpaladimas", new DateTime(1984, 05, 16), 2500);
-            Student s2 = new Student(2, "Giorgos", "Dimoylas", new DateTime(1954, 06, 17), 2250);
-            Student s3 = new Student(3, "Alexandros", "Poylopoylos", new DateTime(1994, 07, 18), 2250);
-            Student s4 = new Student(4, "Sotiris", "Xabales", new DateTime(1992, 08, 19), 2500);
-            Student s5 = new Student(5, "Nikos", "Kollaros", new DateTime(1997, 08, 20), 2250);
-            Student s6 = new Student(6, "Stayros", "Sionis", new DateTime(1987, 09, 21), 2500);
-            Student s7 = new Student(7, "Stathis", "Karachalios", new DateTime(1986, 10, 22), 2250);
-            Student s8 = new Student(8, "Tasos", "Student Last Name 8", new DateTime(2001, 11, 23), 2500);
-            Student s9 = new Student(9, "Giannis", "Galanakis", new DateTime(2000, 12, 24), 2500);
-            Student s10 = new Student(10, "Aris", "Karagiannis", new DateTime(1984, 01, 25), 2500);
-            Student s11 = new Student(11, "Alkis", "Pagoulatos", new DateTime(1985, 02, 26), 2250);
-            Student s12 = new Student(12, "Theodoros", "Sioylas", new DateTime(1987, 01, 16), 2500);
-            Student s13 = new Student(13, "Nikolaos", "Polemarchakis", new DateTime(1986, 03, 27), 2250);
+            Student s1 = new Student("Kostas", "Mpaladimas", new DateTime(1984, 05, 16), 2500);
+            Student s2 = new Student("Giorgos", "Dimoylas", new DateTime(1954, 06, 17), 2250);
+            Student s3 = new Student("Alexandros", "Poylopoylos", new DateTime(1994, 07, 18), 2250);
+            Student s4 = new Student("Sotiris", "Xabales", new DateTime(1992, 08, 19), 2500);
+            Student s5 = new Student("Nikos", "Kollaros", new DateTime(1997, 08, 20), 2250);
+            Student s6 = new Student("Stayros", "Sionis", new DateTime(1987, 09, 21), 2500);
+            Student s7 = new Student("Stathis", "Karachalios", new DateTime(1986, 10, 22), 2250);
+            Student s8 = new Student("Tasos", "Student Last Name 8", new DateTime(2001, 11, 23), 2500);
+            Student s9 = new Student("Giannis", "Galanakis", new DateTime(2000, 12, 24), 2500);
+            Student s10 = new Student("Aris", "Karagiannis", new DateTime(1984, 01, 25), 2500);
+            Student s11 = new Student("Alkis", "Pagoulatos", new DateTime(1985, 02, 26), 2250);
+            Student s12 = new Student("Theodoros", "Sioylas", new DateTime(1987, 01, 16), 2500);
+            Student s13 = new Student("Nikolaos", "Polemarchakis", new DateTime(1986, 03, 27), 2250);
+            context.Students.AddOrUpdate(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13);
+            context.SaveChanges();
             #endregion
             #region Seeding Trainers
             Trainer t1 = new Trainer(1, "Ektoras", "Gatsos", "C#");

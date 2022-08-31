@@ -8,10 +8,8 @@ namespace SoloProjectPartA.Application
 {
     public class Input
     {
-        public static void ReadStudent(out int id, out string name, out string surname, out decimal tuitionFees, out string dateOfBirth)
+        public static void ReadStudent(out string name, out string surname, out decimal tuitionFees, out string dateOfBirth)
         {
-            Console.WriteLine("Give Student ID");
-            id = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Give Student Name");
             name = Console.ReadLine();
             Console.WriteLine("Give Student Surname");

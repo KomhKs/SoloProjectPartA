@@ -14,7 +14,7 @@ namespace SoloProjectPartA
     {
         static void Main(string[] args)
         {
-            MyDatabase db = new MyDatabase();
+            MyApplicationDbContext db = new MyApplicationDbContext();
             int input;
             SelectMenu selection;
             do
