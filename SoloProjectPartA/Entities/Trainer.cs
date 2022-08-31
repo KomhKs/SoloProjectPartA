@@ -12,6 +12,7 @@ namespace SoloProjectPartA.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Subject { get; set; }
+        // Navigation Properties
         public List<Course> Courses { get; set; } = new List<Course>();
 
         public Trainer()

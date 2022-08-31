@@ -13,6 +13,7 @@ namespace SoloProjectPartA.Entities
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public decimal TuitionFees { get; set; }
+        // Navigation Properties
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Assignment> Assignment { get; set; } = new List<Assignment>();
 

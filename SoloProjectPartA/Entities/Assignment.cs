@@ -14,6 +14,7 @@ namespace SoloProjectPartA.Entities
         public DateTime SubDate { get; set; }
         public float OralMark { get; set; }
         public float TotalMark { get; set; }
+        // Navigation Properties
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Student> Students { get; set; } = new List<Student>();
         public Assignment()

@@ -1,19 +1,20 @@
-﻿using SoloProjectPartA.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SoloProjectPartA.Database
+﻿namespace SoloProjectPartA.Migrations
 {
-    public class MyDatabase
+    using SoloProjectPartA.Entities;
+    using System;
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Data.Entity.Migrations;
+    using System.Linq;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<SoloProjectPartA.Database.MyApplicationDbContext>
     {
-        public List<Assignment> Assignments { get; set; } = new List<Assignment>();
-        public List<Trainer> Trainers { get; set; } = new List<Trainer>();
-        public List<Course> Courses { get; set; } = new List<Course>();
-        public List<Student> Students { get; set; } = new List<Student>();
-        public MyDatabase()
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = true;
+        }
+
+        protected override void Seed(SoloProjectPartA.Database.MyApplicationDbContext context)
         {
             #region Seeding Students
             Student s1 = new Student(1, "Kostas", "Mpaladimas", new DateTime(1984, 05, 16), 2500);
@@ -234,16 +235,16 @@ namespace SoloProjectPartA.Database
             t7.Courses.Add(c5);
 
             #endregion
-            #region Populate Lists
-            List<Student> students = new List<Student>() { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13 };
-            Students.AddRange(students);
-            List<Trainer> trainers = new List<Trainer>() { t1, t2, t3, t4, t5, t6, t7 };
-            Trainers.AddRange(trainers);
-            List<Assignment> assignments = new List<Assignment>() { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11 };
-            Assignments.AddRange(assignments);
-            List<Course> courses = new List<Course>() { c1, c2, c3, c4, c5 };
-            Courses.AddRange(courses);
-            #endregion
+            //#region Populate Lists
+            //List<Student> students = new List<Student>() { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13 };
+            //Students.AddRange(students);
+            //List<Trainer> trainers = new List<Trainer>() { t1, t2, t3, t4, t5, t6, t7 };
+            //Trainers.AddRange(trainers);
+            //List<Assignment> assignments = new List<Assignment>() { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11 };
+            //Assignments.AddRange(assignments);
+            //List<Course> courses = new List<Course>() { c1, c2, c3, c4, c5 };
+            //Courses.AddRange(courses);
+            //#endregion
         }
     }
 }

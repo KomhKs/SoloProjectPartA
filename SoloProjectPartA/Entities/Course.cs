@@ -15,6 +15,7 @@ namespace SoloProjectPartA.Entities
         public string Type { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
+        // Navigation Properties
         public List<Student> Students { get; set; } = new List<Student>();
         public List<Trainer> Trainers { get; set; } = new List<Trainer>();
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();

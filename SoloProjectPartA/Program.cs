@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SoloProjectPartA
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
