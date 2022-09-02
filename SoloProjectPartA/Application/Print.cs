@@ -45,6 +45,7 @@ namespace SoloProjectPartA.Application
         public static void AllStudentsWithMultipleCourses(List<Student> students, string message)
         {
             int c = 0;
+            int d = 0;
             Console.WriteLine(message);
             foreach (var stu in students)
             {
@@ -55,10 +56,11 @@ namespace SoloProjectPartA.Application
                 if (c > 1)
                 {
                     PrintStudent(stu);
+                    d++;
                 }
                 c = 0;
             }
-            if (c == 0)
+            if (d == 0)
             {
                 Console.WriteLine("No Students With Multiple Courses In Database.");
             }
