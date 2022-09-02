@@ -17,6 +17,7 @@ namespace SoloProjectPartA
             MyApplicationDbContext db = new MyApplicationDbContext();
             int input;
             SelectMenu selection;
+            var otiNanai = db.Trainers.Include(x => x.db.Courses).ToList();
             do
             {
                 View.ViewMenu();
@@ -28,7 +29,6 @@ namespace SoloProjectPartA
 
                 Controller.Controller1(db, selection);
             } while (selection != 0);
-            Console.WriteLine("Tralala");
         }
     }
 }
