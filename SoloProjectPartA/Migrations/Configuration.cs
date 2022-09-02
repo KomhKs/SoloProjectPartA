@@ -161,7 +161,7 @@
             s12.Assignments = new List<Assignment> {a1, a2, a4, a5, a11 };
             s13.Assignments = new List<Assignment> {a1, a4, a7, a8, a10 };
 
-            s1.Courses = new List<Course> {c1 c3};
+            s1.Courses = new List<Course> {c1, c3};
             s2.Courses = new List<Course> {c2, c3, c5};
             s3.Courses = new List<Course> {c1, c5};
             s4.Courses = new List<Course> {c2};
