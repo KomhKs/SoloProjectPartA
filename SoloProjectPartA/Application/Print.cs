@@ -42,7 +42,7 @@ namespace SoloProjectPartA.Application
         {
             Console.WriteLine($"{ass.AssignmentId,-15}{ass.Title,-25}");
         }
-        public static void AllStudentsWithMultipleCourses(DbSet<Student> students, string message)
+        public static void AllStudentsWithMultipleCourses(List<Student> students, string message)
         {
             int c = 0;
             Console.WriteLine(message);
@@ -52,10 +52,11 @@ namespace SoloProjectPartA.Application
                 {
                     c++;
                 }
-                if (c >= 1)
+                if (c > 1)
                 {
                     PrintStudent(stu);
                 }
+                c = 0;
             }
             if (c == 0)
             {
