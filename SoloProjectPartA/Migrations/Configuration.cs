@@ -51,7 +51,7 @@
             a1.Students = new List<Student> { s1, s3, s5 };
 
             Assignment a2 = new Assignment("Assignment 2", "Description 2", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to 
+            // Adding Students to Assignments
             a2.Students = new List<Student> { s2, s4, s6, s7 };
 
             Assignment a3 = new Assignment("Assignment 3", "Description 3", new DateTime(2022, 03, 31), 50, 100);
@@ -142,8 +142,58 @@
             c5.Trainers = new List<Trainer>() { t1, t2, t6, t7 };
 
             #endregion
-            context.Courses.AddOrUpdate(c1,c2,c3,c4,c5);
-            context.Assignments.AddOrUpdate(a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11);
+
+            context.Assignments.AddOrUpdate(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+
+            context.Courses.AddOrUpdate(c1, c2, c3, c4, c5);
+
+            s1.Assignments = new List<Assignment> {a1, a4, a6, a10 };
+            s2.Assignments = new List<Assignment> {a2, a3, a6};
+            s3.Assignments = new List<Assignment> {a1, a3, a5, a6, a11};
+            s4.Assignments = new List<Assignment> {a2, a6, a11 };
+            s5.Assignments = new List<Assignment> {a1, a3, a6, a9 };
+            s6.Assignments = new List<Assignment> {a2, a5, a7, a11 };
+            s7.Assignments = new List<Assignment> {a2, a3, a7, a9, a11 };
+            s8.Assignments = new List<Assignment> {a3, a7 };
+            s9.Assignments = new List<Assignment> {a5, a7, a9, a11 };
+            s10.Assignments = new List<Assignment> {a3, a8, a10, a11 };
+            s11.Assignments = new List<Assignment> {a4, a5, a8, a9, a10 };
+            s12.Assignments = new List<Assignment> {a1, a2, a4, a5, a11 };
+            s13.Assignments = new List<Assignment> {a1, a4, a7, a8, a10 };
+
+            s1.Courses = new List<Course> {c1, c3} ;
+            s2.Courses = new List<Course> {c2,c3, c5};
+            s3.Courses = new List<Course> {c1, c5};
+            s4.Courses = new List<Course> {c2};
+            s5.Courses = new List<Course> {c2, c5};
+            s6.Courses = new List<Course> {c3};
+            s7.Courses = new List<Course> {c3, c5};
+            s8.Courses = new List<Course> {c3};
+            s9.Courses = new List<Course> {c4};
+            s10.Courses = new List<Course> {c4};
+            s11.Courses = new List<Course> {c4, c5};
+            s12.Courses = new List<Course> {c1};
+            s13.Courses = new List<Course> {c5};
+
+            t1.Courses = new List<Course> {c1, c2, c3};
+            t2.Courses =  new List<Course> {c2, c4, c5};
+            t3.Courses =  new List<Course> {c2, c3};
+            t4.Courses =  new List<Course> {c1, c4};
+            t5.Courses =  new List<Course> {c2, c4};
+            t6.Courses =  new List<Course> {c1, c5};
+            t7.Courses =  new List<Course> {c2, c5};
+
+            a1.Courses = new List<Course> {c2, c4};
+            a2.Courses = new List<Course> {c1, c3, c4};
+            a3.Courses = new List<Course> {c1, c2};
+            a4.Courses = new List<Course> {c3};
+            a5.Courses = new List<Course> {c1, c3};
+            a6.Courses = new List<Course> {c4};
+            a7.Courses = new List<Course> {c1, c4};
+            a8.Courses = new List<Course> {c4};
+            a9.Courses = new List<Course> {c5};
+            a10.Courses = new List<Course> {c5};
+            a10.Courses = new List<Course> {c1, c5};
 
             context.SaveChanges();
             //#region Populate Lists
