@@ -47,20 +47,23 @@ namespace SoloProjectPartA.Views
                 Print.PrintAllAssignments(ass);
             }
         }
-        public static void StudentsPerCourse(List<Student> students, string message)
+        public static void StudentsPerCourse(List<Course> courses, string message)
         {
             {
                 Console.WriteLine(message);
-                Console.WriteLine($"{"Student Id",-15}{"First Name",-15}{"Last Name",-15}");
-                foreach (var stu in students)
+                Console.WriteLine($"{"Course Id",-20}{"Title",-25}{"Type",-15}");
+                foreach (var cou in courses)
                 {
-                    Print.PrintStudent(stu);
-                    Console.WriteLine($"{"",-30}{"Course Id",-30}{"Title",-25}{"Type",-25}");
-                    foreach (var cou in stu.Courses)
+                    Print.PrintCourse(cou); 
+                    Console.WriteLine("------------------------------------------------------------------------------------------");
+                    Console.WriteLine($"{"",-30}{"Student Id",-20}{"First Name",-20}{"Last Name",-25}");
+                    foreach (var stu in cou.Students)
                     {
                         Console.Write($"{"",-30}");
-                        Print.PrintCourse(cou);
+                        Print.PrintStudent(stu);
                     }
+                    Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+
                 }
             }
         }
@@ -68,50 +71,56 @@ namespace SoloProjectPartA.Views
         {
             {
                 Console.WriteLine(message);
-                Console.WriteLine($"{"Trainer Id",-15}{"First Name",-15}{"Last Name",-15}");
                 foreach (var tr in trainers)
                 {
+                    Console.WriteLine($"{"Trainer Id",-20}{"First Name",-20}{"Last Name",-15}");
                     Print.PrintTrainer(tr);
+                    Console.WriteLine("------------------------------------------------------------------------------------------");
                     Console.WriteLine($"{"",-30}{"Course Id",-30}{"Title",-25}{"Type",-25}");
                     foreach (var cou in tr.Courses)
                     {
                         Console.Write($"{"",-30}");
                         Print.PrintCourse(cou);
                     }
+                    Console.WriteLine(" - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
                 }
             }
         }
-        public static void AssignmentsPerStudent(List<Assignment> assignments, string message)
+        public static void AssignmentsPerStudent(List<Student> students, string message)
         {
             {
                 Console.WriteLine(message);
-                Console.WriteLine($"{"Assignment Id",-15}{"Title",-15}");
-                foreach (var ass in assignments)
+                foreach (var stu in students)
                 {
-                    Print.PrintAssignment(ass);
-                    Console.WriteLine($"{"",-30}{"Course Id",-30}{"Title",-25}{"Type",-25}");
-                    foreach (var stu in ass.Students)
+                    Console.WriteLine($"{"Student Id",-15}{"Student FirstName",-25}{"Student LastName",-15}");
+                    Print.PrintStudent(stu);
+                    Console.WriteLine("-----------------------------------------------------------------------------------------");
+                    Console.WriteLine($"{"",-30}{"Assignment Id",-30}{"Title",-25}");
+                    foreach (var ass in stu.Assignments)
                     {
                         Console.Write($"{"",-30}");
-                        Print.PrintStudent(stu);
+                        Print.PrintAssignment(ass);
                     }
+                    Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 }
             }
         }
-        public static void AssignmentsPerCourse(List<Assignment> assignments, string message)
+        public static void AssignmentsPerCourse(List<Course> courses, string message)
         {
             {
                 Console.WriteLine(message);
-                Console.WriteLine($"{"Assignment Id",-15}{"Title",-15}");
-                foreach (var ass in assignments)
+                foreach (var cou in courses)
                 {
-                    Print.PrintAssignment(ass);
-                    Console.WriteLine($"{"",-30}{"Course Id",-30}{"Title",-25}{"Type",-25}");
-                    foreach (var cou in ass.Courses)
+                    Console.WriteLine($"{"Course Id",-20}{"Title",-25}{"Type",-15}");
+                    Print.PrintCourse(cou);
+                    Console.WriteLine("-----------------------------------------------------------------------------------------");
+                    Console.WriteLine($"{"",-30}{"Assignment Id",-30}{"Title",-25}");
+                    foreach (var ass in cou.Assignments)
                     {
                         Console.Write($"{"",-30}");
-                        Print.PrintCourse(cou);
+                        Print.PrintAssignment(ass);
                     }
+                    Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                 }
             }
         }

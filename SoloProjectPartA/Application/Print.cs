@@ -16,7 +16,7 @@ namespace SoloProjectPartA.Application
         }
         public static void PrintStudent(Student stu)
         {
-            Console.WriteLine($"{stu.StudentId,-15}{stu.FirstName,-25}{stu.LastName,-25}");
+            Console.WriteLine($"{stu.StudentId,-20}{stu.FirstName,-20}{stu.LastName,-25}");
         }
         public static void PrintAllTrainers(Trainer tr)
         {
@@ -24,7 +24,7 @@ namespace SoloProjectPartA.Application
         }
         public static void PrintTrainer(Trainer tr)
         {
-            Console.WriteLine($"{tr.TrainerId,-15}{tr.FirstName,-25}{tr.LastName,-25}");
+            Console.WriteLine($"{tr.TrainerId,-20}{tr.FirstName,-20}{tr.LastName,-25}");
         }
         public static void PrintAllCourses(Course cou)
         {
@@ -32,7 +32,7 @@ namespace SoloProjectPartA.Application
         }
         public static void PrintCourse(Course cou)
         {
-            Console.WriteLine($"{cou.CourseId,-30}{cou.Title,-25}{cou.Type,-25}");
+            Console.WriteLine($"{cou.CourseId,-20}{cou.Title,-25}{cou.Type,-25}");
         }
         public static void PrintAllAssignments(Assignment ass)
         {
@@ -40,7 +40,7 @@ namespace SoloProjectPartA.Application
         }
         public static void PrintAssignment(Assignment ass)
         {
-            Console.WriteLine($"{ass.AssignmentId,-15}{ass.Title,-25}");
+            Console.WriteLine($"{ass.AssignmentId,-30}{ass.Title,-25}");
         }
         public static void AllStudentsWithMultipleCourses(List<Student> students, string message)
         {

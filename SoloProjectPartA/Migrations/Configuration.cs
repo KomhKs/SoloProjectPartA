@@ -3,6 +3,7 @@
     using SoloProjectPartA.Entities;
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -30,9 +31,10 @@
             Student s11 = new Student("Alkis", "Pagoulatos", new DateTime(1985, 02, 26), 2250);
             Student s12 = new Student("Theodoros", "Sioylas", new DateTime(1987, 01, 16), 2500);
             Student s13 = new Student("Nikolaos", "Polemarchakis", new DateTime(1986, 03, 27), 2250);
-            context.Students.AddOrUpdate(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13);
+            context.Students.AddOrUpdate(x => new { x.FirstName, x.LastName }, s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13);
             context.SaveChanges();
             #endregion
+
             #region Seeding Trainers
             Trainer t1 = new Trainer("Ektoras", "Gatsos", "C#");
             Trainer t2 = new Trainer("Nikolaos", "Polizos", "Power Electronics");
@@ -41,112 +43,51 @@
             Trainer t5 = new Trainer("Aristedes", "Kyprakis", "Biomechanical Automations");
             Trainer t6 = new Trainer("Mixalis", "Sfakiotakis", "Systems of Automated Control");
             Trainer t7 = new Trainer("Dimitrios", "Minadakis", "Microcontrolers");
-            context.Trainers.AddOrUpdate(t1, t2, t3, t4, t5, t6, t7);
+            context.Trainers.AddOrUpdate(x => new { x.FirstName, x.LastName },t1, t2, t3, t4, t5, t6, t7);
             context.SaveChanges();
             #endregion
 
             #region Seeding Assignments
-            Assignment a1 = new Assignment("Assignment 1", "Description 1", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a1.Students = new List<Student> { s1, s3, s5 };
-
-            Assignment a2 = new Assignment("Assignment 2", "Description 2", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a2.Students = new List<Student> { s2, s4, s6, s7 };
-
-            Assignment a3 = new Assignment("Assignment 3", "Description 3", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a3.Students = new List<Student> { s2, s3, s5, s7, s8, s10 };
-
-            Assignment a4 = new Assignment("Assignment 4", "Description 4", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a4.Students = new List<Student> { s1, s11 };
-
-            Assignment a5 = new Assignment("Assignment 5", "Description 5", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a5.Students = new List<Student> { s3, s6, s9, s11 };
-
-            Assignment a6 = new Assignment("Assignment 6", "Description 6", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a6.Students = new List<Student> { s1, s2, s3, s4, s5 };
-
-            Assignment a7 = new Assignment("Assignment 7", "Description 7", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a7.Students = new List<Student> { s6, s7, s8, s9 };
-
-            Assignment a8 = new Assignment("Assignment 8", "Description 8", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a8.Students = new List<Student> { s10, s11 };
-
-            Assignment a9 = new Assignment("Assignment 9", "Description 9", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a9.Students = new List<Student> { s5, s7, s9, s11 };
-
-            Assignment a10 = new Assignment("Assignment 10", "Description 10", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a10.Students = new List<Student> { s1, s6, s9, s10, s11 };
-
-            Assignment a11 = new Assignment("Assignment 11", "Description 11", new DateTime(2022, 03, 31), 50, 100);
-            // Adding Students to Assignments
-            a11.Students = new List<Student> { s3, s4, s6, s7, s10 };
+            Assignment a1 = new Assignment("Steam Application", "Create a Steam online application", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a2 = new Assignment("Basic Chocolate Factory", "Create a program that implements a chocolate factory.", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a3 = new Assignment("Pong ", "Create a pong application", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a4 = new Assignment("Tetris", "Create a Tetris application", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a5 = new Assignment("Space Invaders", "Create a basic Spae Invaders Game.", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a6 = new Assignment("Sudoku", "Create a sudoku game", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a7 = new Assignment("Lotto", "Create a Lotto draw application", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a8 = new Assignment("Sudoku Solver", "Create a solver for Sudoku game", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a9 = new Assignment("Chess Tournament", "Create an app for Chess Tournament.", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a10 = new Assignment("Morse Code", "Create an app that takes a string input in . and - and transforms it to text ia morse code.", new DateTime(2022, 03, 31), 50, 100);
+            Assignment a11 = new Assignment("Boolean Algebra Solver", "Create an application that solves basic boolean algebra equations.", new DateTime(2022, 03, 31), 50, 100);
+            context.Assignments.AddOrUpdate(x => x.Title, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
+            context.SaveChanges();
             #endregion
+
             #region Seeding Courses
-            Course c1 = new Course("Course 1", "What the f is Stream? 1", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
-            // Adding Students to Courses
-            c1.Students = new List<Student>() { s1, s3, s12 };
+            Course c1 = new Course("C#", "What the f is Stream? 1", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
+            Course c2 = new Course("C++", "What the f is Stream? 2", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
+            Course c3 = new Course("C", "What the f is Stream? 3", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
+            Course c4 = new Course("Lisp", "What the f is Stream? 4", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
+            Course c5 = new Course("Basic", "What the f is Stream? 5", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
+            context.Courses.AddOrUpdate(x => x.Title, c1, c2, c3, c4, c5);
+            context.SaveChanges();
+            #endregion            
+            
+            #region Populating Lists
+            //Adding Students To Assignments
+            a1.Students = new List<Student> { s1, s3, s5 };
+            a2.Students = new List<Student> { s2, s4, s6, s7 };
+            a3.Students = new List<Student> { s2, s3, s5, s7, s8, s10 };
+            a4.Students = new List<Student> { s1, s11 };
+            a5.Students = new List<Student> { s3, s6, s9, s11 };
+            a6.Students = new List<Student> { s1, s2, s3, s4, s5 };
+            a7.Students = new List<Student> { s6, s7, s8, s9 };
+            a8.Students = new List<Student> { s10, s11 };
+            a9.Students = new List<Student> { s5, s7, s9, s11 };
+            a10.Students = new List<Student> { s1, s6, s9, s10, s11 };
+            a11.Students = new List<Student> { s3, s4, s6, s7, s10 };
 
-            // Adding Assignments to Courses
-            c1.Assignments = new List<Assignment>() { a2, a3, a5, a7, a11 };
-
-            // Adding Trainers to Courses
-            c1.Trainers = new List<Trainer>() { t1, t4, t6 };
-
-            Course c2 = new Course("Course 2", "What the f is Stream? 2", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
-            // Adding Students to Courses
-            c2.Students = new List<Student>() { s2, s4, s5 };
-
-            // Adding Assignments to Courses
-            c2.Assignments = new List<Assignment>() { a1, a3 };
-
-            // Adding Trainers to Courses
-            c2.Trainers = new List<Trainer>() { t2, t3, t5, t7 };
-
-            Course c3 = new Course("Course 3", "What the f is Stream? 3", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
-            // Adding Students to Courses
-            c3.Students = new List<Student>() { s1, s2, s6, s7, s8 };
-
-            // Adding Assignments to Courses
-            c3.Assignments = new List<Assignment>() { a2, a4, a5 };
-
-            // Adding Trainers to Courses
-            c3.Trainers = new List<Trainer>() { t1, t3 };
-
-            Course c4 = new Course("Course 4", "What the f is Stream? 4", "Part-Time", new DateTime(2022, 03, 01), new DateTime(2022, 08, 31));
-            // Adding Students to Courses
-            c4.Students = new List<Student>() { s9, s10, s11 };
-
-            // Adding Assignments to Courses
-            c4.Assignments = new List<Assignment>() { a1, a2, a6, a7, a8 };
-
-            // Adding Trainers to Courses
-            c4.Trainers = new List<Trainer>() { t2, t4, t5 };
-
-            Course c5 = new Course("Course 5", "What the f is Stream? 5", "Full-Time", new DateTime(2022, 03, 01), new DateTime(2022, 05, 31));
-            // Adding Students to Courses
-            c5.Students = new List<Student>() { s2, s3, s5, s7, s11, s13 };
-
-            // Adding Assignments to Courses
-            c5.Assignments = new List<Assignment>() { a9, a10, a11 };
-
-            // Adding Trainers to Courses
-            c5.Trainers = new List<Trainer>() { t1, t2, t6, t7 };
-
-            #endregion
-
-            context.Assignments.AddOrUpdate(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11);
-
-            context.Courses.AddOrUpdate(c1, c2, c3, c4, c5);
-
+            //Adding Assignments To Students
             s1.Assignments = new List<Assignment> {a1, a4, a6, a10 };
             s2.Assignments = new List<Assignment> {a2, a3, a6};
             s3.Assignments = new List<Assignment> {a1, a3, a5, a6, a11};
@@ -161,6 +102,28 @@
             s12.Assignments = new List<Assignment> {a1, a2, a4, a5, a11 };
             s13.Assignments = new List<Assignment> {a1, a4, a7, a8, a10 };
 
+            //Adding Students To Courses
+            c1.Students = new List<Student>() { s1, s3, s12 };
+            c2.Students = new List<Student>() { s2, s4, s5 };
+            c3.Students = new List<Student>() { s1, s2, s6, s7, s8 };
+            c4.Students = new List<Student>() { s9, s10, s11 };
+            c5.Students = new List<Student>() { s2, s3, s5, s7, s11, s13 };
+
+            //Adding Assignments To Courses
+            c1.Assignments = new List<Assignment>() { a2, a3, a5, a7, a11 };
+            c2.Assignments = new List<Assignment>() { a1, a3 };
+            c3.Assignments = new List<Assignment>() { a2, a4, a5 };
+            c4.Assignments = new List<Assignment>() { a1, a2, a6, a7, a8 };
+            c5.Assignments = new List<Assignment>() { a9, a10, a11 };
+
+            //Adding Trainers To Courses
+            c1.Trainers = new List<Trainer>() { t1, t4, t6 };
+            c2.Trainers = new List<Trainer>() { t2, t3, t5, t7 };
+            c3.Trainers = new List<Trainer>() { t1, t3 };
+            c4.Trainers = new List<Trainer>() { t2, t4, t5 };
+            c5.Trainers = new List<Trainer>() { t1, t2, t6, t7 };
+
+            //Adding Courses To Students
             s1.Courses = new List<Course> {c1, c3};
             s2.Courses = new List<Course> {c2, c3, c5};
             s3.Courses = new List<Course> {c1, c5};
@@ -175,6 +138,7 @@
             s12.Courses = new List<Course> {c1};
             s13.Courses = new List<Course> {c5};
 
+            //Adding Courses To Trainers
             t1.Courses = new List<Course> {c1, c2, c3};
             t2.Courses =  new List<Course> {c2, c4, c5};
             t3.Courses =  new List<Course> {c2, c3};
@@ -183,6 +147,7 @@
             t6.Courses =  new List<Course> {c1, c5};
             t7.Courses =  new List<Course> {c2, c5};
 
+            //Adding Courses To Assignments
             a1.Courses = new List<Course> {c2, c4};
             a2.Courses = new List<Course> {c1, c3, c4};
             a3.Courses = new List<Course> {c1, c2};
@@ -196,16 +161,7 @@
             a10.Courses = new List<Course> {c1, c5};
 
             context.SaveChanges();
-            //#region Populate Lists
-            //List<Student> students = new List<Student>() { s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13 };
-            //Students.AddRange(students);
-            //List<Trainer> trainers = new List<Trainer>() { t1, t2, t3, t4, t5, t6, t7 };
-            //Trainers.AddRange(trainers);
-            //List<Assignment> assignments = new List<Assignment>() { a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11 };
-            //Assignments.AddRange(assignments);
-            //List<Course> courses = new List<Course>() { c1, c2, c3, c4, c5 };
-            //Courses.AddRange(courses);
-            //#endregion
+            #endregion
         }
     }
 }
