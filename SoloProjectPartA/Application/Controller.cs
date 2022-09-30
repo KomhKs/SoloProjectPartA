@@ -36,9 +36,59 @@ namespace SoloProjectPartA.Application
                 case SelectMenu.AddCoursetoStudent: AddThings.AddCourseToStudent(db); break;
                 case SelectMenu.AddAssignmentToStudent: AddThings.AddAssignmentToStudent(db); break;
                 case SelectMenu.AddCourseToTrainer: AddThings.AddCourseToTrainer(db); break;
+                case SelectMenu.DeleteThings: Controller.DeleteControler(db); break;
                 case SelectMenu.ExitApplication: Console.WriteLine("Exiting Application"); break;
                 default: Console.WriteLine("I Am Error!"); break;
             }
+        }
+        public static void DeleteControler(MyApplicationDbContext db)
+        {
+            int inputNumeric;
+            bool invalidInput;
+            DeleteMenu selection;
+            do
+            {
+                View.DeleteMenu();
+                string inputString = Console.ReadLine();
+                bool isNumeric = int.TryParse(inputString, out _);
+                while (!isNumeric)
+                {
+                    Console.Clear();
+                    Console.WriteLine("I Am Error! Enter Numeric Input.");
+                    View.ViewMenu();
+                    inputString = Console.ReadLine();
+                    isNumeric = int.TryParse(inputString, out _);
+                }
+                inputNumeric = Convert.ToInt32(inputString);
+                invalidInput = inputNumeric < 0 && inputNumeric > 4;
+                while (invalidInput)
+                {
+                    Console.WriteLine("I Am Error! Enter Input Within the Appropriate Range.");
+                    inputNumeric = Convert.ToInt32(inputString);
+                    invalidInput = inputNumeric < 0 && inputNumeric > 4;
+                }
+                Console.Clear();
+                selection = (DeleteMenu)inputNumeric;
+                switch (selection)
+                {
+                    case DeleteMenu.Exit:
+                        Console.WriteLine("Returning to Start Menu");
+                        break;
+                    case DeleteMenu.DeleteStudent:
+                        Console.WriteLine("Under Construction");
+                        break;
+                    case DeleteMenu.DeleteTrainer:
+                        Console.WriteLine("Under Construction");
+                        break;
+                    case DeleteMenu.DeleteCourse:
+                        Console.WriteLine("Under Construction");
+                        break;
+                    case DeleteMenu.DeleteAssignment:
+                        Console.WriteLine("Under Construction");
+                        break;
+                    default: Console.WriteLine("I Am Error!"); break;
+                }
+            } while (selection != 0);
         }
     }
 }

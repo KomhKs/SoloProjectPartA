@@ -55,11 +55,13 @@
   <ItemGroup>
     <Compile Include="Application\AddThings.cs" />
     <Compile Include="Application\Controller.cs" />
+    <Compile Include="Application\DeleteThings.cs" />
     <Compile Include="Application\Input.cs" />
     <Compile Include="Application\Print.cs" />
     <Compile Include="Database\MyApplicationDbContext.cs" />
     <Compile Include="Entities\Assignment.cs" />
     <Compile Include="Entities\Course.cs" />
+    <Compile Include="Enums\DeleteMenu.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

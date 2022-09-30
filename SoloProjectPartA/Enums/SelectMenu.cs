@@ -29,5 +29,6 @@ namespace SoloProjectPartA.Enums
         ShowAllAssignmentsPerCourse = 18,
         ShowAllAssignmentsPerStudent = 19,
         AddAssignmentToStudent = 20,
+        DeleteThings = 21
     }
 }

@@ -170,12 +170,21 @@ namespace SoloProjectPartA.Views
             Console.WriteLine();
             Console.ResetColor();
             Console.WriteLine($"{"------- Students -------",first}{"------- Courses -------",second}{"------- Trainers -------",third}{"------- Assignments -------",fourth}{"------- 0 to EXIT -------"}");
-            Console.WriteLine($"{"1 - Add Student",first}{"6 - Add Course",second}{"10 - Add Trainer",third}{"15 - Add Assignment",fourth}");
+            Console.WriteLine($"{"1 - Add Student",first}{"6 - Add Course",second}{"10 - Add Trainer",third}{"15 - Add Assignment",fourth}{"21 - Delete Things",fourth}");
             Console.WriteLine($"{"2 - Add Multiple Students",first}{"7 - Add Multiple Courses",second}{"11 - Add Multiple Trainers",third}{"16 - Add Multiple Assignments",fourth}");
             Console.WriteLine($"{"3 - Show All Students",first}{"8 - Show All Courses",second}{"12 - Show All Trainers",third}{"17 - Show All Assignments",fourth}");
             Console.WriteLine($"{"4 - Show All Students Per Course",first}{"9 - Add Course to Student",second}{"13 - Show All Trainers Per Course",third}{"18 - Show All Assignments Per Course",fourth}");
             Console.WriteLine($"{"5 - Students With Multiple Courses",first}{"",second}{"14 - Add Course to Trainer",third}{"19 - Show All Assignments Per Student",fourth}");
             Console.WriteLine($"{"",first}{"",second}{"",third}{"20 - Add Assignment to Student",fourth}");
+        }
+        public static void DeleteMenu()
+        {
+            Console.WriteLine("Choose an option");
+            Console.WriteLine("0 - Exit");
+            Console.WriteLine("1 - Delete Student");
+            Console.WriteLine("2 - Delete Trainer");
+            Console.WriteLine("3 - Delete Course");
+            Console.WriteLine("4 - Delete Assignment");
         }
     }
 }
