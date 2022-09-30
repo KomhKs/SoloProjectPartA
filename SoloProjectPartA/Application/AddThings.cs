@@ -21,6 +21,7 @@ namespace SoloProjectPartA.Application
             Course cou = AddCourseToStudentCreate(db);
             Assignment ass = AddAssignmentToStudentCreate(db);
             Student stu1 = new Student(name, surname, result, tuitionFees, cou, ass);
+            cou.Students.Add(stu1);
             db.Students.AddOrUpdate(stu1);
             db.SaveChanges();
         }
@@ -29,6 +30,7 @@ namespace SoloProjectPartA.Application
             Input.ReadTrainer(out string name, out string surname, out string subject);
             Course cou = AddCourseToTrainerCreate(db);
             Trainer tr1 = new Trainer(name, surname, subject, cou);
+            cou.Trainers.Add(tr1);
             db.Trainers.AddOrUpdate(tr1);
             db.SaveChanges();
         }
@@ -155,6 +157,7 @@ namespace SoloProjectPartA.Application
                 }
             }
             stu1.Assignments.Add(ass1);
+            ass1.Students.Add(stu1);
             db.SaveChanges();
         }
         public static void AddCourseToStudent(MyApplicationDbContext db)
@@ -179,6 +182,7 @@ namespace SoloProjectPartA.Application
                 }
             }
             stu1.Courses.Add(cou1);
+            cou1.Students.Add(stu1);
             db.SaveChanges();
         }
         public static Course AddCourseToTrainerCreate(MyApplicationDbContext db)
@@ -217,6 +221,7 @@ namespace SoloProjectPartA.Application
                 }
             }
             tra1.Courses.Add(cou1);
+            cou1.Trainers.Add(tra1);
             db.SaveChanges();
         }
     }
