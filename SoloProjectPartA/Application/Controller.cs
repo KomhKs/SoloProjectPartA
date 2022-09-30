@@ -33,6 +33,9 @@ namespace SoloProjectPartA.Application
                 case SelectMenu.ShowAllAssignments: View.ShowAllAssignments(db.Assignments.ToList(), "- - - - - - - - - - - - - - - Showing All Assignments - - - - - - - - - - - - - - -"); break;
                 case SelectMenu.ShowAllAssignmentsPerCourse: View.AssignmentsPerCourse(db.Courses.Include(x => x.Assignments).ToList(), "- - - - - - - - - - - - - - Showing Assignments Per Course - - - - - - - - - - - - - - -"); break;
                 case SelectMenu.ShowAllAssignmentsPerStudent: View.AssignmentsPerStudent(db.Students.Include(x => x.Assignments).ToList(), "- - - - - - - - - - - - - - Showing Assignments Per Student - - - - - - - - - - - - - - -"); break;
+                case SelectMenu.AddCoursetoStudent: AddThings.AddCourseToStudent(db); break;
+                case SelectMenu.AddAssignmentToStudent: AddThings.AddAssignmentToStudent(db); break;
+                case SelectMenu.AddCourseToTrainer: AddThings.AddCourseToTrainer(db); break;
                 case SelectMenu.ExitApplication: Console.WriteLine("Exiting Application"); break;
                 default: Console.WriteLine("I Am Error!"); break;
             }

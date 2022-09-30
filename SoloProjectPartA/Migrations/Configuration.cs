@@ -18,31 +18,31 @@
         protected override void Seed(SoloProjectPartA.Database.MyApplicationDbContext context)
         {
             #region Seeding Students
-            Student s1 = new Student("Kostas", "Mpaladimas", new DateTime(1984, 05, 16), 2500);
-            Student s2 = new Student("Giorgos", "Dimoylas", new DateTime(1954, 06, 17), 2250);
-            Student s3 = new Student("Alexandros", "Poylopoylos", new DateTime(1994, 07, 18), 2250);
-            Student s4 = new Student("Sotiris", "Xabales", new DateTime(1992, 08, 19), 2500);
-            Student s5 = new Student("Nikos", "Kollaros", new DateTime(1997, 08, 20), 2250);
-            Student s6 = new Student("Stayros", "Sionis", new DateTime(1987, 09, 21), 2500);
-            Student s7 = new Student("Stathis", "Karachalios", new DateTime(1986, 10, 22), 2250);
-            Student s8 = new Student("Tasos", "Student Last Name 8", new DateTime(2001, 11, 23), 2500);
-            Student s9 = new Student("Giannis", "Galanakis", new DateTime(2000, 12, 24), 2500);
-            Student s10 = new Student("Aris", "Karagiannis", new DateTime(1984, 01, 25), 2500);
-            Student s11 = new Student("Alkis", "Pagoulatos", new DateTime(1985, 02, 26), 2250);
-            Student s12 = new Student("Theodoros", "Sioylas", new DateTime(1987, 01, 16), 2500);
-            Student s13 = new Student("Nikolaos", "Polemarchakis", new DateTime(1986, 03, 27), 2250);
-            context.Students.AddOrUpdate(x => new { x.FirstName, x.LastName }, s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13);
+            Student s1 = new Student() { FirstName = "Kostas", LastName = "Mpaladimas", DateOfBirth = new DateTime(1984, 05, 16), TuitionFees = 2500 };
+            Student s2 = new Student() { FirstName = "Giorgos", LastName = "Dimoylas", DateOfBirth = new DateTime(1954, 06, 17), TuitionFees = 2250 };
+            Student s3 = new Student() { FirstName = "Alexandros", LastName = "Poylopoylos", DateOfBirth = new DateTime(1994, 07, 18), TuitionFees = 2250 };
+            Student s4 = new Student() { FirstName = "Sotiris", LastName = "Xabales", DateOfBirth = new DateTime(1992, 08, 19), TuitionFees = 2500 };
+            Student s5 = new Student() { FirstName = "Nikos", LastName = "Kollaros", DateOfBirth = new DateTime(1997, 08, 20), TuitionFees = 2250 };
+            Student s6 = new Student() { FirstName = "Stayros", LastName = "Sionis", DateOfBirth = new DateTime(1987, 09, 21), TuitionFees = 2500 };
+            Student s7 = new Student() { FirstName = "Stathis", LastName = "Karachalios", DateOfBirth = new DateTime(1986, 10, 22), TuitionFees = 2250 };
+            Student s8 = new Student() { FirstName = "Tasos", LastName = "Student Last Name 8", DateOfBirth = new DateTime(2001, 11, 23), TuitionFees = 2500 };
+            Student s9 = new Student() { FirstName = "Giannis", LastName = "Galanakis", DateOfBirth = new DateTime(2000, 12, 24), TuitionFees = 2500 };
+            Student s10 = new Student() { FirstName = "Aris", LastName = "Karagiannis", DateOfBirth = new DateTime(1984, 01, 25), TuitionFees = 2500 };
+            Student s11 = new Student() { FirstName = "Alkis", LastName = "Pagoulatos", DateOfBirth = new DateTime(1985, 02, 26), TuitionFees = 2250 };
+            Student s12 = new Student() { FirstName = "Theodoros", LastName = "Sioylas", DateOfBirth = new DateTime(1987, 01, 16), TuitionFees = 2500 };
+            Student s13 = new Student() { FirstName = "Nikolaos", LastName = "Polemarchakis", DateOfBirth = new DateTime(1986, 03, 27), TuitionFees = 2250 };
+            context.Students.AddOrUpdate(x => new { x.FirstName, x.LastName }, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13);
             context.SaveChanges();
             #endregion
 
             #region Seeding Trainers
-            Trainer t1 = new Trainer("Ektoras", "Gatsos", "C#");
-            Trainer t2 = new Trainer("Nikolaos", "Polizos", "Power Electronics");
-            Trainer t3 = new Trainer("Georgios", "Drakakis", "Theory of electrical circuits");
-            Trainer t4 = new Trainer("Ioannis", "Siderakis", "High Voltages");
-            Trainer t5 = new Trainer("Aristedes", "Kyprakis", "Biomechanical Automations");
-            Trainer t6 = new Trainer("Mixalis", "Sfakiotakis", "Systems of Automated Control");
-            Trainer t7 = new Trainer("Dimitrios", "Minadakis", "Microcontrolers");
+            Trainer t1 = new Trainer() { FirstName = "Ektoras", LastName = "Gatsos", Subject = "C#"};
+            Trainer t2 = new Trainer() { FirstName = "Nikolaos", LastName = "Polizos", Subject = "Power Electronics" };
+            Trainer t3 = new Trainer() { FirstName = "Georgios", LastName = "Drakakis", Subject = "Theory of electrical circuits" };
+            Trainer t4 = new Trainer() { FirstName = "Ioannis", LastName = "Siderakis", Subject = "High Voltages" };
+            Trainer t5 = new Trainer() { FirstName = "Aristedes", LastName = "Kyprakis", Subject = "Biomechanical Automations" };
+            Trainer t6 = new Trainer() { FirstName = "Mixalis", LastName = "Sfakiotakis", Subject = "Systems of Automated Control" };
+            Trainer t7 = new Trainer() { FirstName = "Dimitrios", LastName = "Minadakis", Subject = "Microcontrolers" };
             context.Trainers.AddOrUpdate(x => new { x.FirstName, x.LastName },t1, t2, t3, t4, t5, t6, t7);
             context.SaveChanges();
             #endregion

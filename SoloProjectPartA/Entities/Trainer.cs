@@ -19,11 +19,12 @@ namespace SoloProjectPartA.Entities
         {
 
         }
-        public Trainer(string firstName, string lastName, string subject)
+        public Trainer(string firstName, string lastName, string subject, Course course)
         {
             FirstName = firstName;
             LastName = lastName;
             Subject = subject;
+            Courses = new List<Course> { course };
         }
     }
 }

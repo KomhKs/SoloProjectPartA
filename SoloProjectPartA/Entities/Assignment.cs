@@ -29,10 +29,5 @@ namespace SoloProjectPartA.Entities
             OralMark = oralMark;
             TotalMark = totalMark;
         }
-
-        public static implicit operator List<object>(Assignment v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
