@@ -61,8 +61,24 @@ namespace SoloProjectPartA.Application
                     db.SaveChanges();
                     DeleteStudentFromCourse(db, cou1);
                     DeleteTrainerFromCourse(db, cou1);
+                    DeleteAssignmentFromCourse(db, cou1);
                 }
             }
+        }
+
+        private static void DeleteAssignmentFromCourse(MyApplicationDbContext db, Course cou1)
+        {
+            foreach (Assignment assignment in db.Assignments)
+            {
+                foreach (Course course in assignment.Courses)
+                {
+                    if (course.CourseId == cou1.CourseId)
+                    {
+                        assignment.Courses.Remove(cou1);
+                    }
+                }
+            }
+            db.SaveChanges();
         }
 
         private static void DeleteTrainerFromCourse(MyApplicationDbContext db, Course cou1)

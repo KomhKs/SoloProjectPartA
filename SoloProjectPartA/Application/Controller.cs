@@ -78,7 +78,7 @@ namespace SoloProjectPartA.Application
                         break;
                     case DeleteMenu.DeleteTrainer: DeleteThings.DeleteTrainer(db, db.Trainers.Include(x => x.Courses).ToList());
                         break;
-                    case DeleteMenu.DeleteCourse: DeleteThings.DeleteCourse(db, db.Courses.Include(x => x.Students).Include(x => x.Trainers).ToList());
+                    case DeleteMenu.DeleteCourse: DeleteThings.DeleteCourse(db, db.Courses.Include(x => x.Students).Include(x => x.Trainers).Include(x => x.Assignments).ToList());
                         break;
                     case DeleteMenu.DeleteAssignment: DeleteThings.DeleteAssignment(db, db.Assignments.Include(x => x.Students).Include(x => x.Courses).ToList());
                         break;
