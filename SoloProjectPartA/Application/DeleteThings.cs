@@ -23,11 +23,11 @@ namespace SoloProjectPartA.Application
                 {
                     stu1 = stu;
                     db.Students.Remove(stu1);
+                    db.SaveChanges();
                     DeleteCourseFromStudent(db, stu1);
                     DeleteAssignmentFromStudent(db, stu1);
                 }
             }
-            db.SaveChanges();
         }
         public static void DeleteTrainer(MyApplicationDbContext db, List<Trainer> trainers)
         {
@@ -41,10 +41,10 @@ namespace SoloProjectPartA.Application
                 {
                     tra1 = tra;
                     db.Trainers.Remove(tra1);
+                    db.SaveChanges();
                     DeleteCourseFromTrainer(db, tra1);
                 }
             }
-            db.SaveChanges();
         }
         public static void DeleteCourse(MyApplicationDbContext db, List<Course> courses)
         {
@@ -58,11 +58,11 @@ namespace SoloProjectPartA.Application
                 {
                     cou1 = cou;
                     db.Courses.Remove(cou1);
+                    db.SaveChanges();
                     DeleteStudentFromCourse(db, cou1);
                     DeleteTrainerFromCourse(db, cou1);
                 }
             }
-            db.SaveChanges();
         }
 
         private static void DeleteTrainerFromCourse(MyApplicationDbContext db, Course cou1)
@@ -107,10 +107,10 @@ namespace SoloProjectPartA.Application
                 {
                     ass1 = ass;
                     db.Assignments.Remove(ass1);
+                    db.SaveChanges();
                     DeleteStudentFromAssignment(db, ass1);
                 }
             }
-            db.SaveChanges();
         }
 
         private static void DeleteStudentFromAssignment(MyApplicationDbContext db, Assignment ass1)
