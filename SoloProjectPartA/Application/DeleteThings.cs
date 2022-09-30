@@ -11,13 +11,13 @@ namespace SoloProjectPartA.Application
 {
     public class DeleteThings
     {
-        public static void DeleteStudent(MyApplicationDbContext db)
+        public static void DeleteStudent(MyApplicationDbContext db, List<Student> students)
         {
             View.ShowAllStudents(db.Students.ToList());
             Student stu1;
             Console.WriteLine("Select Student Id to Delete Student");
             int choice = Convert.ToInt16(Console.ReadLine());
-            foreach (Student stu in db.Students)
+            foreach (Student stu in students)
             {
                 if (stu.StudentId == choice)
                 {
@@ -29,13 +29,13 @@ namespace SoloProjectPartA.Application
             }
             db.SaveChanges();
         }
-        public static void DeleteTrainer(MyApplicationDbContext db)
+        public static void DeleteTrainer(MyApplicationDbContext db, List<Trainer> trainers)
         {
             View.ShowAllTrainers(db.Trainers.ToList());
             Trainer tra1;
             Console.WriteLine("Select Trainer Id to Delete Trainer");
             int choice = Convert.ToInt16(Console.ReadLine());
-            foreach (Trainer tra in db.Trainers)
+            foreach (Trainer tra in trainers)
             {
                 if (tra.TrainerId == choice)
                 {
@@ -46,13 +46,13 @@ namespace SoloProjectPartA.Application
             }
             db.SaveChanges();
         }
-        public static void DeleteCourse(MyApplicationDbContext db)
+        public static void DeleteCourse(MyApplicationDbContext db, List<Course> courses)
         {
             View.ShowAllCourses(db.Courses.ToList());
             Course cou1;
             Console.WriteLine("Select Course Id to Delete Course");
             int choice = Convert.ToInt16(Console.ReadLine());
-            foreach (Course cou in db.Courses)
+            foreach (Course cou in courses)
             {
                 if (cou.CourseId == choice)
                 {
@@ -95,13 +95,13 @@ namespace SoloProjectPartA.Application
             db.SaveChanges();
         }
 
-        public static void DeleteAssignment(MyApplicationDbContext db)
+        public static void DeleteAssignment(MyApplicationDbContext db, List<Assignment> assignments)
         {
             View.ShowAllAssignments(db.Assignments.ToList());
             Assignment ass1;
             Console.WriteLine("Select Course Id to Delete Course");
             int choice = Convert.ToInt16(Console.ReadLine());
-            foreach (Assignment ass in db.Assignments)
+            foreach (Assignment ass in assignments)
             {
                 if (ass.AssignmentId == choice)
                 {

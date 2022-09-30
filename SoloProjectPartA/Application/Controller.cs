@@ -74,17 +74,13 @@ namespace SoloProjectPartA.Application
                     case DeleteMenu.Exit:
                         Console.WriteLine("Returning to Start Menu");
                         break;
-                    case DeleteMenu.DeleteStudent:
-                        Console.WriteLine("Under Construction");
+                    case DeleteMenu.DeleteStudent: DeleteThings.DeleteStudent(db, db.Students.Include(x => x.Courses).Include(x => x.Assignments).ToList());
                         break;
-                    case DeleteMenu.DeleteTrainer:
-                        Console.WriteLine("Under Construction");
+                    case DeleteMenu.DeleteTrainer: DeleteThings.DeleteTrainer(db, db.Trainers.Include(x => x.Courses).ToList());
                         break;
-                    case DeleteMenu.DeleteCourse:
-                        Console.WriteLine("Under Construction");
+                    case DeleteMenu.DeleteCourse: DeleteThings.DeleteCourse(db, db.Courses.Include(x => x.Students).Include(x => x.Trainers).ToList());
                         break;
-                    case DeleteMenu.DeleteAssignment:
-                        Console.WriteLine("Under Construction");
+                    case DeleteMenu.DeleteAssignment: DeleteThings.DeleteAssignment(db, db.Assignments.Include(x => x.Students).Include(x => x.Courses).ToList());
                         break;
                     default: Console.WriteLine("I Am Error!"); break;
                 }

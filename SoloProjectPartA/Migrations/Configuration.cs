@@ -87,6 +87,7 @@
             a10.Students = new List<Student> { s1, s6, s9, s10, s11 };
             a11.Students = new List<Student> { s3, s4, s6, s7, s10 };
 
+            context.SaveChanges();
             //Adding Assignments To Students
             s1.Assignments = new List<Assignment> {a1, a4, a6, a10 };
             s2.Assignments = new List<Assignment> {a2, a3, a6};
@@ -102,6 +103,7 @@
             s12.Assignments = new List<Assignment> {a1, a2, a4, a5, a11 };
             s13.Assignments = new List<Assignment> {a1, a4, a7, a8, a10 };
 
+            context.SaveChanges();
             //Adding Students To Courses
             c1.Students = new List<Student>() { s1, s3, s12 };
             c2.Students = new List<Student>() { s2, s4, s5 };
@@ -109,6 +111,7 @@
             c4.Students = new List<Student>() { s9, s10, s11 };
             c5.Students = new List<Student>() { s2, s3, s5, s7, s11, s13 };
 
+            context.SaveChanges();
             //Adding Assignments To Courses
             c1.Assignments = new List<Assignment>() { a2, a3, a5, a7, a11 };
             c2.Assignments = new List<Assignment>() { a1, a3 };
@@ -116,6 +119,7 @@
             c4.Assignments = new List<Assignment>() { a1, a2, a6, a7, a8 };
             c5.Assignments = new List<Assignment>() { a9, a10, a11 };
 
+            context.SaveChanges();
             //Adding Trainers To Courses
             c1.Trainers = new List<Trainer>() { t1, t4, t6 };
             c2.Trainers = new List<Trainer>() { t2, t3, t5, t7 };
@@ -123,6 +127,7 @@
             c4.Trainers = new List<Trainer>() { t2, t4, t5 };
             c5.Trainers = new List<Trainer>() { t1, t2, t6, t7 };
 
+            context.SaveChanges();
             //Adding Courses To Students
             s1.Courses = new List<Course> {c1, c3};
             s2.Courses = new List<Course> {c2, c3, c5};
@@ -138,6 +143,7 @@
             s12.Courses = new List<Course> {c1};
             s13.Courses = new List<Course> {c5};
 
+            context.SaveChanges();
             //Adding Courses To Trainers
             t1.Courses = new List<Course> {c1, c2, c3};
             t2.Courses =  new List<Course> {c2, c4, c5};
@@ -147,6 +153,7 @@
             t6.Courses =  new List<Course> {c1, c5};
             t7.Courses =  new List<Course> {c2, c5};
 
+            context.SaveChanges();
             //Adding Courses To Assignments
             a1.Courses = new List<Course> {c2, c4};
             a2.Courses = new List<Course> {c1, c3, c4};
